@@ -14,10 +14,6 @@ use std::time::{Duration, Instant};
 // (misalnya untuk menghentikan stopwatch)
 use crossterm::event::{self, Event, KeyCode};
 
-// chrono untuk dapetin waktu 
-// lokal sekarang (tanggal dan jam)
-use chrono::Local;
-
 /* Stopwatch struct untuk menyimpan informasi tentang stopwatch */
 struct Stopwatch {
     start_time: Option<Instant>,    // waktu mulai stopwatch
@@ -100,15 +96,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut last_update = Instant::now(); // waktu terakhir update tampilan
     
     loop {
-        // Update tampilan tiap 100ms
-        if last_update.elapsed() > Duration::from_millis(100) {
+        // Update tampilan tiap 16ms
+        if last_update.elapsed() > Duration::from_millis(16) {
             let duration = stopwatch.current_duration();
-            let time_str = format!(
-                "\r{:02}:{:02}:{:02}", 
-                duration.as_secs() / 3600,
-                (duration.as_secs() % 3600) / 60,
-                duration.as_secs() % 60
-            );
+	    let total_millis = duration.as_millis();
+
+            let jam = total_millis / 3_600_000;
+    	    let sisa = total_millis % 3_600_000;
+            let menit = sisa / 60_000;
+            let sisa = sisa % 60_000;
+            let detik = sisa / 1000;
+            let millis = sisa % 1000;
+
+    	    let time_str = format!(
+        	"\r{:02}:{:02}:{:02}.{:03}", 
+        	jam, menit, detik, millis
+    	    );
+
             print!("{}", time_str);
             last_update = Instant::now();
         }
