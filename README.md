@@ -14,7 +14,6 @@ Sebuah penghitung waktu berbasis command-line dengan kontrol keyboard realtime, 
   - `r` - Ulang/Reset
   - `q` - Keluar
 - 📝 Log waktu ke file `stopwatch.log`
-- 🧵 Multi-thread untuk input non-blocking
 
 ## Apa yang harus disiapkan
 
