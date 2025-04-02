@@ -1,4 +1,4 @@
-# CLI Stopwatch dalam Rust
+# CLI Stopwatch
 
 Sebuah penghitung waktu berbasis command-line dengan kontrol keyboard realtime, dibuat menggunakan Rust.
 
