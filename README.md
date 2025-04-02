@@ -2,11 +2,12 @@
 
 Sebuah penghitung waktu berbasis command-line dengan kontrol keyboard realtime, dibuat menggunakan Rust.
 
-![Demo CLI Stopwatch](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDl1Y2Q0eG5vY2x3Y2RqY3V0OHJkNmN5N3B5bGx6b2s0a3B2eWZ0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btT1T9qpQZWhNlK/giphy.gif)
+![image](https://github.com/user-attachments/assets/0d366a58-5fac-4b9a-bd8a-4982208757e8)
+
 
 ## Fitur
 
-- 🕒 Tampilan waktu realtime (jam:menit:detik)
+- 🕒 Tampilan waktu realtime (jam:menit:detik:milidetik)
 - ⌨️ Kontrol keyboard:
   - `s` - Mulai
   - `p` - Jeda/Jedai
